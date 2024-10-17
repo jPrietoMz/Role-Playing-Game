@@ -6,6 +6,29 @@ let fighting;
 let monsterHealth;
 let inventory = ["stick"];
 
+// Obtén los elementos del DOM
+const modal = document.getElementById("gameModal");
+const startGameBtn = document.getElementById("startGameBtn");
+const closeBtn = document.querySelector(".closeBtn");
+
+// Abrir el modal cuando se hace clic en el botón de "Start Game"
+startGameBtn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// Cerrar el modal cuando se hace clic en la "X"
+closeBtn.onclick = function() {
+  modal.style.display = "none";
+}
+
+// Cerrar el modal cuando se hace clic fuera del contenido
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+
 const button1 = document.querySelector('#button1');
 const button2 = document.querySelector("#button2");
 const button3 = document.querySelector("#button3");
